@@ -5,7 +5,8 @@ pipeline {
         SSH_CRED    = 'nodekey'
         SERVER_IP   = '52.53.202.92'
         REMOTE_USER = 'ec2-user'
-        APP_DIR     = '/home/ec2-user/pramod'
+        APP_DIR     = '/home/ec2-user/shared-jenkins/nodeapp/node-shared-jenkins-infra
+'
     }
 
     stages {
