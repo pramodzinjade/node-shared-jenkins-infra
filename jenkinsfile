@@ -1,10 +1,9 @@
-```groovy
 pipeline {
     agent any
 
     environment {
-        SSH_CRED    = 'your-credential-id'
-        SERVER_IP   = 'your-server-ip'
+        SSH_CRED    = 'nodekey'
+        SERVER_IP   = '52.53.202.92'
         REMOTE_USER = 'ec2-user'
         APP_DIR     = '/home/ec2-user/node'
     }
@@ -69,4 +68,4 @@ pipeline {
         }
     }
 }
-```
+
