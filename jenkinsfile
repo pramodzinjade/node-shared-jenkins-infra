@@ -15,7 +15,6 @@ pipeline {
                 sshagent(credentials: [SSH_CRED]) {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${SERVER_IP} '
-                            set -e
 
                             mkdir -p ${APP_DIR}
                             cd ${APP_DIR}
