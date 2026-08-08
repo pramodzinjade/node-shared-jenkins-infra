@@ -1,42 +1,49 @@
+```groovy
 pipeline {
     agent any
 
     environment {
-        SERVER_IP      = '34.224.90.178' // your deploy server  id
-        SSH_CREDENTIAL = 'node-key'     //genkins credential id
-        REPO_URL       = 'https://github.com/pramodzinjade/node-app-cicd.git'
-        BRANCH         = 'main'
-        REMOTE_USER    = 'ubuntu'
-        REMOTE_PATH    = '/home/ubuntu/node-app'
+        SSH_CRED    = 'your-credential-id'
+        SERVER_IP   = 'your-server-ip'
+        REMOTE_USER = 'ec2-user'
+        APP_DIR     = '/home/ec2-user/node'
     }
-    
-    
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git branch: "${BRANCH}", url: "${REPO_URL}"
-            }
-        }
 
-        stage('Upload Files to target-server') {
+    stages {
+
+        stage('Deploy to Server') {
             steps {
-                sshagent([SSH_CREDENTIAL]) {
+                sshagent(credentials: [SSH_CRED]) {
                     sh """
-                        ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${SERVER_IP} 'mkdir -p ${REMOTE_PATH}'
-                        scp -o StrictHostKeyChecking=no -r * ${REMOTE_USER}@${SERVER_IP}:${REMOTE_PATH}/
+                        ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${SERVER_IP} '
+                            set -e
+
+                            mkdir -p ${APP_DIR}
+                            cd ${APP_DIR}
+
+                            git pull origin master
+
+                            docker rm -f nodecont || true
+
+                            docker build -f Dockerfile -t nodeimg .
+
+                            docker run -d \
+                                -p 3000:3000 \
+                                --name nodecont \
+                                nodeimg
+                        '
                     """
                 }
             }
         }
 
-        stage('Install Dependencies & Start App on the target server') {
+        stage('Validate') {
             steps {
-                sshagent([SSH_CREDENTIAL]) {
+                sshagent(credentials: [SSH_CRED]) {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${SERVER_IP} '
-                            cd ${REMOTE_PATH} &&
-                            npm install &&
-                            pm2 start app.js --name node-app || pm2 restart node-app
+                            docker images
+                            docker ps
                         '
                     """
                 }
@@ -46,13 +53,20 @@ pipeline {
 
     post {
         success {
-            echo '✅ Application deployed successfully!'
+            echo '========================================'
+            echo 'NODE.JS APPLICATION DEPLOYED SUCCESSFULLY!'
+            echo '========================================'
         }
+
         failure {
-            echo '❌ Deployment failed.'
+            echo '========================================'
+            echo 'NODE.JS APPLICATION DEPLOYMENT FAILED!'
+            echo '========================================'
+        }
+
+        always {
+            echo 'Node.js pipeline execution completed.'
         }
     }
 }
-
-
-
+```
