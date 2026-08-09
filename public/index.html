@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PicShare</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+        PicShare
+    </div>
+
+    <div class="search-box">
+
+        🔍
+
+        <input
+            type="text"
+            placeholder="Search">
+
+    </div>
+
+    <nav>
+
+        <a href="#home">⌂</a>
+
+        <a href="#explore">⌕</a>
+
+        <a href="#create">＋</a>
+
+        <a href="#activity">♡</a>
+
+        <div class="nav-profile">
+            P
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main>
+
+
+    <!-- FEED -->
+
+    <section class="feed" id="home">
+
+
+        <!-- STORIES -->
+
+        <div class="stories">
+
+            <div class="story your-story">
+
+                <div class="story-image">
+                    P
+                </div>
+
+                <span>
+                    Your story
+                </span>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image image1"></div>
+
+                <span>
+                    rohan
+                </span>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image image2"></div>
+
+                <span>
+                    neha
+                </span>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image image3"></div>
+
+                <span>
+                    amit
+                </span>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image image4"></div>
+
+                <span>
+                    priya
+                </span>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image image5"></div>
+
+                <span>
+                    rahul
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- POST 1 -->
+
+        <article class="post">
+
+            <div class="post-header">
+
+                <div class="user-info">
+
+                    <div class="avatar avatar1">
+                    </div>
+
+                    <div>
+                        <strong>rohan.dev</strong>
+                        <small>Pune, India</small>
+                    </div>
+
+                </div>
+
+                <button class="more">
+                    •••
+                </button>
+
+            </div>
+
+
+            <div class="post-image post-image1"></div>
+
+
+            <div class="post-actions">
+
+                <div>
+
+                    <button
+                        class="like-btn"
+                        onclick="likePost(this)">
+                        ♡
+                    </button>
+
+                    <button>
+                        ♡
+                    </button>
+
+                    <button>
+                        ➤
+                    </button>
+
+                </div>
+
+                <button>
+                    ♧
+                </button>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <strong class="likes">
+                    1,248 likes
+                </strong>
+
+                <p>
+                    <strong>rohan.dev</strong>
+                    Building something amazing today 🚀
+                    #coding #developer #technology
+                </p>
+
+                <a href="#">
+                    View all 48 comments
+                </a>
+
+                <div class="add-comment">
+
+                    <input
+                        type="text"
+                        placeholder="Add a comment...">
+
+                    <button>
+                        Post
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- POST 2 -->
+
+        <article class="post">
+
+            <div class="post-header">
+
+                <div class="user-info">
+
+                    <div class="avatar avatar2">
+                    </div>
+
+                    <div>
+                        <strong>travelwithneha</strong>
+                        <small>Goa, India</small>
+                    </div>
+
+                </div>
+
+                <button class="more">
+                    •••
+                </button>
+
+            </div>
+
+
+            <div class="post-image post-image2"></div>
+
+
+            <div class="post-actions">
+
+                <div>
+
+                    <button
+                        class="like-btn"
+                        onclick="likePost(this)">
+                        ♡
+                    </button>
+
+                    <button>
+                        ♡
+                    </button>
+
+                    <button>
+                        ➤
+                    </button>
+
+                </div>
+
+                <button>
+                    ♧
+                </button>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <strong class="likes">
+                    3,842 likes
+                </strong>
+
+                <p>
+
+                    <strong>
+                        travelwithneha
+                    </strong>
+
+                    Sunset, ocean and good vibes 🌅
+
+                    #travel #goa #sunset
+
+                </p>
+
+                <a href="#">
+                    View all 123 comments
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- POST 3 -->
+
+        <article class="post">
+
+            <div class="post-header">
+
+                <div class="user-info">
+
+                    <div class="avatar avatar3">
+                    </div>
+
+                    <div>
+                        <strong>priyadesigns</strong>
+                        <small>Mumbai, India</small>
+                    </div>
+
+                </div>
+
+                <button class="more">
+                    •••
+                </button>
+
+            </div>
+
+
+            <div class="post-image post-image3"></div>
+
+
+            <div class="post-actions">
+
+                <div>
+
+                    <button
+                        class="like-btn"
+                        onclick="likePost(this)">
+                        ♡
+                    </button>
+
+                    <button>
+                        ♡
+                    </button>
+
+                    <button>
+                        ➤
+                    </button>
+
+                </div>
+
+                <button>
+                    ♧
+                </button>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <strong class="likes">
+                    2,156 likes
+                </strong>
+
+                <p>
+
+                    <strong>
+                        priyadesigns
+                    </strong>
+
+                    New project finished 🎨✨
+
+                    #design #creative #work
+
+                </p>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="profile-box">
+
+            <div class="profile-avatar">
+                P
+            </div>
+
+            <div>
+
+                <strong>
+                    pramodzinjade
+                </strong>
+
+                <small>
+                    Pramod Zinjade
+                </small>
+
+            </div>
+
+            <button>
+                Switch
+            </button>
+
+        </div>
+
+
+        <div class="suggestions-header">
+
+            <span>
+                Suggested for you
+            </span>
+
+            <strong>
+                See All
+            </strong>
+
+        </div>
+
+
+        <div class="suggestion">
+
+            <div class="small-avatar image1"></div>
+
+            <div>
+                <strong>
+                    developer_rahul
+                </strong>
+
+                <small>
+                    Followed by rohan.dev
+                </small>
+            </div>
+
+            <button>
+                Follow
+            </button>
+
+        </div>
+
+
+        <div class="suggestion">
+
+            <div class="small-avatar image2"></div>
+
+            <div>
+                <strong>
+                    neha_travels
+                </strong>
+
+                <small>
+                    New to PicShare
+                </small>
+            </div>
+
+            <button>
+                Follow
+            </button>
+
+        </div>
+
+
+        <div class="suggestion">
+
+            <div class="small-avatar image3"></div>
+
+            <div>
+                <strong>
+                    amit_codes
+                </strong>
+
+                <small>
+                    Followed by 3 people
+                </small>
+            </div>
+
+            <button>
+                Follow
+            </button>
+
+        </div>
+
+
+        <footer>
+
+            About · Help · Privacy · Terms
+
+            <br><br>
+
+            © 2026 PicShare
+
+        </footer>
+
+    </aside>
+
+</main>
+
+
+<!-- MOBILE NAVIGATION -->
+
+<div class="mobile-nav">
+
+    <a href="#home">⌂</a>
+
+    <a href="#explore">⌕</a>
+
+    <a href="#create">＋</a>
+
+    <a href="#activity">♡</a>
+
+    <a href="#profile">P</a>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
