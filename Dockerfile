@@ -1,6 +1,6 @@
 FROM node:18
 WORKDIR /node
-COPY ./package.json .
+COPY ./package*.json .
 RUN npm install
 COPY . .
 ENTRYPOINT ["node"]
