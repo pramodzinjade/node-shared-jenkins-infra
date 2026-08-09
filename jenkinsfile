@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         SSH_CRED    = 'nodekey'
-        SERVER_IP   = '52.53.202.92'
+        SERVER_IP   = '54.153.9.249'
         REMOTE_USER = 'ec2-user'
         APP_DIR     = '/home/ec2-user/shared-jenkins/nodeapp/node-shared-jenkins-infra'
     }
